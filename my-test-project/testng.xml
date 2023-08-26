@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="MyTestSuite">
+
+    <!-- Configuration for the test suite -->
+    <listeners>
+        <listener class-name="com.pintu.utils.Listener"/>
+    </listeners>
+
+    <test name="UserTests">
+        <classes>
+            <!-- Test Classes -->
+            <class name="com.pintu.tests.UserGetTest"/>
+            <class name="com.pintu.tests.UserPostTest"/>
+            <class name="com.pintu.tests.UserGetConsistencyTest"/>
+            <class name="com.pintu.tests.UserPostConsistencyTest"/>
+            <class name="com.pintu.tests.UserPostNegativeTest"/>
+        </classes>
+    </test>
+</suite>
