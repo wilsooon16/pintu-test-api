@@ -24,7 +24,7 @@ public class UserPostConsistencyTest {
 		RestAssured.baseURI = "https://jsonplaceholder.typicode.com";
 	}
 
-	@DataProvider(name = "userCountProviderPost")
+	@DataProvider(name = "userCountProviderPost", parallel = true)
 	public Object[][] userCountProvider() {
 		return new Object[30][0]; // 30 rows, no columns needed
 	}
