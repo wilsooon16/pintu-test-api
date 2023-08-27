@@ -17,7 +17,7 @@ import io.restassured.response.Response;
 @Listeners(Listener.class)
 public class UserPostNegativeTest {
 	Faker faker;
-	
+
 	@BeforeClass
 	public void setup() {
 		RestAssured.baseURI = "https://jsonplaceholder.typicode.com";
@@ -26,10 +26,8 @@ public class UserPostNegativeTest {
 
 	@Test
 	public void testInvalidPayloadStructure() {
-		InvalidUser invalidUserPayload = new InvalidUser.Builder().title(faker.number().digit()).body(faker.number().digit())
-				.userId(faker.ancient().god()).build();
-		
-		System.out.println(invalidUserPayload);
+		InvalidUser invalidUserPayload = new InvalidUser.Builder().title(faker.number().digit())
+				.body(faker.number().digit()).userId(faker.ancient().god()).build();
 
 		InvalidUser user = Utilities.postAndDeserialize("/posts", invalidUserPayload, InvalidUser.class);
 
@@ -40,7 +38,7 @@ public class UserPostNegativeTest {
 	@Test
 	public void testServerErrors() {
 		String invalidUserPayload = "{\"sdfsf\"}";
-		
+
 		Response response = Utilities.postInvalid("/posts", invalidUserPayload);
 
 		UserAssertions.assertInternalServerError(response);
@@ -48,23 +46,19 @@ public class UserPostNegativeTest {
 
 	@Test
 	public void testInvalidHTTPMethod() {
-		InvalidUser invalidUserPayload = new InvalidUser.Builder().title(faker.number().digit()).body(faker.number().digit())
-				.userId(faker.ancient().god()).build();
-		
-		System.out.println(invalidUserPayload);
+		InvalidUser invalidUserPayload = new InvalidUser.Builder().title(faker.number().digit())
+				.body(faker.number().digit()).userId(faker.ancient().god()).build();
 
 		Response response = Utilities.putInvalid("/posts", invalidUserPayload);
 
 		UserAssertions.assertRequestNotFound(response);
 
 	}
-	
+
 	@Test
 	public void testUserResponseWithNegativeUserIDPayload() {
-		InvalidUser invalidUserPayload = new InvalidUser.Builder().title(faker.lorem().sentence()).body(faker.lorem().paragraph())
-				.userId(faker.number().numberBetween(-2147483645, -1)).build();
-		
-		System.out.println(invalidUserPayload);
+		InvalidUser invalidUserPayload = new InvalidUser.Builder().title(faker.lorem().sentence())
+				.body(faker.lorem().paragraph()).userId(faker.number().numberBetween(-2147483645, -1)).build();
 
 		Response response = Utilities.putInvalid("/posts", invalidUserPayload);
 
