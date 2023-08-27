@@ -12,8 +12,6 @@ Java IDE: Choose a Java Integrated Development Environment (IDE) such as Eclipse
 
 Maven: Maven is used for project dependency management and build automation. You can download it from the official Maven website and follow the installation instructions.
 
-Git (Optional): While not strictly required, having Git installed on your machine can make it easier to clone the project repository and manage code changes.
-
 ### Project Structure
 <img width="478" alt="Screenshot 2023-08-27 at 10 57 35" src="https://github.com/wilsooon16/restassured-test-sample/assets/45891415/2265f75b-402d-4c25-8094-2c587afabeb0">
 
