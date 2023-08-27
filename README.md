@@ -49,4 +49,4 @@ mvn test -DsuiteXmlFile=testng.xml
 
 # Reporting
 
-The project utilizes Extent Reports for generating detailed HTML test reports. After running the tests, you can find the report in the `test-output` directory.
+The project utilizes Extent Reports for generating detailed HTML test reports. After running the tests, you can find the report in the `test-output` directory with extent-report* as prefix name.
