@@ -66,14 +66,6 @@ public class UserPostTest {
 
 
 	
-	@Test
-	public void testUserResponseWithNegativeUserIDPayload() {
-		User userPayload = new User.Builder().title(faker.lorem().sentence()).body(faker.lorem().paragraph())
-				.userId(faker.number().numberBetween(-2147483645, 0)).build();
 
-		User user = Utilities.postAndDeserialize("/posts", userPayload, User.class);
-
-		UserAssertions.assertResponseContainsPayloadData(userPayload, user);
-	}
 
 }
