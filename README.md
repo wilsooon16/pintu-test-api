@@ -44,6 +44,7 @@ Maven: Maven is used for project dependency management and build automation. You
 Alternatively, you can run all tests using Maven in the command line:
 ```bash
 mvn test -DsuiteXmlFile=testng.xml
+```
 
 # Reporting
 
