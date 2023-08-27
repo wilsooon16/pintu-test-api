@@ -38,8 +38,9 @@ Maven: Maven is used for project dependency management and build automation. You
 1. Clone the repository to your local machine.
 2. Open the project in your preferred Java IDE.
 3. Configure project dependencies as listed in the POM.xml file.
-4. Navigate to the test class, for example, `LoginTest.java`.
-5. Run the tests by right-clicking on the class and selecting "Run" or "Run TestNG Test."
+4. Update the desired capabilities in the GeneralHelper Java class to match your Android device requirements. You can find the GeneralHelper class in your project's source code.
+5. Navigate to the test class, for example, `LoginTest.java`.
+6. Run the tests by right-clicking on the class and selecting "Run" or "Run TestNG Test."
 
 Alternatively, you can run all tests using Maven in the command line:
 ```bash
