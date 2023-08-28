@@ -60,9 +60,9 @@ public class UserPostNegativeTest {
 		InvalidUser invalidUserPayload = new InvalidUser.Builder().title(faker.lorem().sentence())
 				.body(faker.lorem().paragraph()).userId(faker.number().numberBetween(-2147483645, -1)).build();
 
-		Response response = Utilities.putInvalid("/posts", invalidUserPayload);
+		InvalidUser user = Utilities.postAndDeserialize("/posts", invalidUserPayload, InvalidUser.class);
 
-		UserAssertions.assertRequestNotFound(response);
+		UserAssertions.assertResponseContainsPayloadData(invalidUserPayload, user);
 	}
 
 }
